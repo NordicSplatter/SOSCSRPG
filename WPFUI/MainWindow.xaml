@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFUI"
         mc:Ignorable="d"
-        Title="Cody's First Game" Height="768" Width="1024">
+        Title="Rome Mini Game" Height="768" Width="1024">
     <Grid>
         <!-- this sets the rows for the screen-->
         <Grid.RowDefinitions>
@@ -13,7 +13,7 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="225"></RowDefinition>
         </Grid.RowDefinitions>
-        
+
         <!-- This sets the columns for the screen-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"></ColumnDefinition>
@@ -21,9 +21,15 @@
         </Grid.ColumnDefinitions>
 
         <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="Menu" Background="AliceBlue"></Label>
-        
+
         <!--The 6 row definitions set up the rows for the player class attributes -->
-        <Grid Grid.Row="1" Grid.Column="0" Background="Aquamarine">
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Aquamarine" Offset="0"/>
+                    <GradientStop Color="DarkOrchid" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -50,11 +56,12 @@
             <Label Grid.Row="4" Grid.Column="1" Content="{Binding CurrentPlayer.ExperiencePoints}" />
             <Label Grid.Row="5" Grid.Column="0" Content="Level:" />
             <Label Grid.Row="5" Grid.Column="1" Content="{Binding CurrentPlayer.Level}" />
+            <Button Grid.Row="6" Grid.Column="1" Content="Add XP" Click="ButtonBase_OnClick"></Button>
 
         </Grid>
         <Label Grid.Row="1" Grid.Column="1" Content="Game Data" Background="Beige"></Label>
         <Label Grid.Row="2" Grid.Column="0" Content="Inventory/ Quests" Background="BurlyWood"></Label>
         <Label Grid.Row="2" Grid.Column="1" Content="Combat/ Movement Controls" Background="Lavender"></Label>
-        
+
     </Grid>
 </Window>
