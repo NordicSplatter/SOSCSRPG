@@ -46,5 +46,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\GameSession.cs" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\Locations\barrack.png" />
+    <Resource Include="Images\Locations\colosseum.png" />
+    <Resource Include="Images\Locations\marketPlace.png" />
+    <Resource Include="Images\Locations\romanHouse.png" />
+    <Resource Include="Images\Locations\tavern.png" />
+    <Resource Include="Images\Locations\TavernBasement.png" />
+    <Resource Include="Images\Locations\townGate.png" />
+    <Resource Include="Images\Locations\townSquare.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
