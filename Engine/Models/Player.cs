@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Engine.Models
 {
@@ -23,7 +25,8 @@ namespace Engine.Models
                 OnPropertyChanged("Name");
             }
         }
-        public string CharacterClass 
+
+        public string CharacterClass
         {
             get { return _characterClass; }
             set
@@ -32,7 +35,8 @@ namespace Engine.Models
                 OnPropertyChanged("CharacterClass");
             }
         }
-        public int HitPoints 
+
+        public int HitPoints
         {
             get { return _hitPoints; }
             set
@@ -41,15 +45,17 @@ namespace Engine.Models
                 OnPropertyChanged("HitPoints");
             }
         }
+
         public int ExperiencePoints
         {
             get { return _experiencePoints; }
-            set 
-            { 
+            set
+            {
                 _experiencePoints = value;
-                OnPropertyChanged("ExperiencePoints"); 
+                OnPropertyChanged("ExperiencePoints");
             }
         }
+
         public int Level
         {
             get { return _level; }
@@ -59,8 +65,9 @@ namespace Engine.Models
                 OnPropertyChanged("Level");
             }
         }
+
         public int Gold
-        { 
+        {
             get { return _gold; }
             set
             {
@@ -75,7 +82,6 @@ namespace Engine.Models
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
-
     }
 }
+
