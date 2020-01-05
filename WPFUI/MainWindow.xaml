@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         FontSize="11pt"
         Title="Rome Mini Game" Height="768" Width="1024">
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibility" />
+    </Window.Resources>
     <Grid>
         <!-- this sets the rows for the screen-->
         <Grid.RowDefinitions>
@@ -28,7 +32,9 @@
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Aquamarine" Offset="0"/>
-                    <GradientStop Color="DarkOrchid" Offset="1"/>
+                    <GradientStop Color="#FFE0EA05" Offset="1"/>
+                    <GradientStop Color="#FFFCD20A" Offset="0"/>
+                    <GradientStop Color="#FFE90D05" Offset="0.989"/>
                 </LinearGradientBrush>
             </Grid.Background>
             <Grid.RowDefinitions>
@@ -57,7 +63,7 @@
             <Label Grid.Row="4" Grid.Column="1" Content="{Binding CurrentPlayer.ExperiencePoints}" />
             <Label Grid.Row="5" Grid.Column="0" Content="Level:" />
             <Label Grid.Row="5" Grid.Column="1" Content="{Binding CurrentPlayer.Level}" />
-            <Button Grid.Row="6" Grid.Column="1" Content="Add XP" Click="ButtonBase_OnClick"></Button>
+            
 
         </Grid>
         
@@ -76,8 +82,8 @@
 
             <Border Grid.Row="0" Grid.Column="1"
                     BorderBrush="Olive"
-                    BorderThickness="1">
-                <Grid Margin="3">
+                    BorderThickness="1" Margin="0.2,0,10,0.4">
+                <Grid Margin="3.2,3.2,9.4,2.6">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
@@ -105,7 +111,58 @@
         </Grid>
 
             <Label Grid.Row="2" Grid.Column="0" Content="Inventory/ Quests" Background="BurlyWood"></Label>
-        <Label Grid.Row="2" Grid.Column="1" Content="Combat/ Movement Controls" Background="Lavender"></Label>
+        <Grid Grid.Row="2" Grid.Column="1"
+      Background="Lavender">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="255" />
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Row="0" Grid.Column="1">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Row="0" Grid.Column="1" 
+                    
+                        Click="OnClick_MoveNorth"
+                        Height="25" Width="65" Margin="10"
+                        Visibility="{Binding HasLocationToNorth, Converter={StaticResource BooleanToVisibility}}"
+                        Content="North"
+                        BorderBrush="#FF168E3E" Background="#FF9CDC9A"/>
+                <Button Grid.Row="1" Grid.Column="0" 
+                        Click="OnClick_MoveWest"
+                        Height="25" Width="65" Margin="10"
+                        Visibility="{Binding HasLocationToWest, Converter={StaticResource BooleanToVisibility}}"
+                        Content="West" BorderBrush="#FF168E3E" Background="#FF9CDC9A"/>
+                <Button Grid.Row="1" Grid.Column="2"
+                        Click="OnClick_MoveEast"
+                        Height="25" Width="65" Margin="10"
+                        Visibility="{Binding HasLocationToEast, Converter={StaticResource BooleanToVisibility}}"
+                        Content="East" BorderBrush="#FF168E3E" Background="#FF9CDC9A"/>
+                <Button Grid.Row="2" Grid.Column="1"
+                        Click="OnClick_MoveSouth"
+                        Height="25" Width="65" Margin="10"
+                        Visibility="{Binding HasLocationToSouth, Converter={StaticResource BooleanToVisibility}}"
+                        Content="South" BorderBrush="#FF168E3E" Background="#FF9CDC9A"/>
+
+            </Grid>
+
+        </Grid>
 
     </Grid>
 </Window>

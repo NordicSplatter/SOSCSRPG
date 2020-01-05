@@ -49,9 +49,6 @@
     <Compile Include="ViewModels\GameSession.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\Locations\wilderness.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\Locations\barrack.png" />
     <Resource Include="Images\Locations\colosseum.png" />
     <Resource Include="Images\Locations\marketPlace.png" />
@@ -60,6 +57,9 @@
     <Resource Include="Images\Locations\TavernBasement.png" />
     <Resource Include="Images\Locations\townGate.png" />
     <Resource Include="Images\Locations\townSquare.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Locations\wilderness.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
